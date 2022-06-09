@@ -9,9 +9,19 @@ import{
     } from './regularClients.js';
 
 
+
+console.log('           ____________________________________________________ ');
+console.log('          |  SET TERMINAL WINDOW TO FULL FORMAT                |');
+console.log('          |  TO ORDER WRIE COMMAND ./script order {$mealId...} |');
+console.log('          |                                                    | ');
+console.log('          |  EXAMPLE: ./script order D1                        |');
+console.log('          |  EXAMPLE: ./script order D1 T0 T1 etc              |');
+console.log('           ____________________________________________________');
+console.log();
+console.log();
 console.log(`Welcome to Dalida's TeaShop`);
 console.log(`\nMenu\nTea\n`);
-console.log('Name'.padEnd(50)+'kcal'.padEnd(10)+'cost'.padEnd(15)+'ingriedents\n');
+console.log('ID'.padEnd(5)+'Name'.padEnd(50)+'kcal'.padEnd(10)+'cost'.padEnd(15)+'ingriedents\n');
 
 
 
@@ -25,11 +35,11 @@ const teaMenu = teaArray.map(teaObject => {
             ingridients += ingridient;
         }        
     });
-    return `${teaObject['name'].padEnd(50)}${(teaObject['kcal'].toString()).padEnd(10)}${teaObject['cost'].toString().padEnd(15)}${ingridients}`;    
+    return `${teaObject['id'].padEnd(5)}+${teaObject['name'].padEnd(50)}${(teaObject['kcal'].toString()).padEnd(10)}${teaObject['cost'].toString().padEnd(15)}${ingridients}`;    
 });
 
 const dessertMenu = dessertArray.map(dessertObject => {
-    return `${dessertObject['name'].padEnd(50)}${dessertObject['cost'].toString().padEnd(15)}`;    
+    return `${dessertObject['id'].padEnd(5)}+${dessertObject['name'].padEnd(50)}${dessertObject['cost'].toString().padEnd(15)}`;    
 });
 
 const showMenu = (el)=>{
@@ -49,8 +59,8 @@ showMenu(dessertMenu);
     return obj['cost'] <=  this;        
 }
 
-console.log(teaArray.filter(filterPrice,1300));
-console.log(dessertArray.filter(filterPrice,1300));
+// console.log(teaArray.filter(filterPrice,1300));
+// console.log(dessertArray.filter(filterPrice,1300));
 
 
 const printBill = (name,...order)=>{
