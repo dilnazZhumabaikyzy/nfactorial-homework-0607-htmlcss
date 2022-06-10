@@ -1,6 +1,6 @@
 {
   "type": "module",
-  "name": "2",
+  "name": "dts",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -9,6 +9,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bin": {
+    "dts": "./script.js"
+  },
   "dependencies": {
     "chalk": "^5.0.1",
     "commander": "^9.3.0",
